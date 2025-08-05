@@ -1,0 +1,132 @@
+############################################################
+# 🚀 USERS API
+############################################################
+
+### 🔹 Get all users
+GET http://localhost:8080/api/users
+Accept: application/json
+
+### 🔹 Get user by ID
+GET http://localhost:8080/api/users/3
+Accept: application/json
+
+### 🔹 Create a new user
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Adrin",
+  "role": "Developer"
+}
+
+### 🔹 Create another user
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "name": "Bob",
+  "role": "Tester"
+}
+
+############################################################
+# 🚀 PROJECTS API
+############################################################
+
+### 🔹 Get all projects
+GET http://localhost:8080/api/projects
+Accept: application/json
+
+### 🔹 Get project by ID
+GET http://localhost:8080/api/projects/1
+Accept: application/json
+
+### 🔹 Create a new project
+POST http://localhost:8080/api/projects
+Content-Type: application/json
+
+{
+  "name": "Issue Tracker Phase 1"
+}
+
+### 🔹 Create another project
+POST http://localhost:8080/api/projects
+Content-Type: application/json
+
+{
+  "name": "Bug Management System"
+}
+
+### 🔹 Search projects by name
+GET http://localhost:8080/api/projects/search/issue
+Accept: application/json
+
+### 🔹 Get total number of projects
+GET http://localhost:8080/api/projects/count
+Accept: application/json
+
+### 🔹 Get only project names
+GET http://localhost:8080/api/projects/names
+Accept: application/json
+
+### 🔹 Get projects by bug status (e.g., OPEN)
+GET http://localhost:8080/api/projects/bug-status/OPEN
+Accept: application/json
+
+############################################################
+# 🚀 BUGS API
+############################################################
+
+### 🔹 Get all bugs
+GET http://localhost:8080/api/bugs
+Accept: application/json
+
+### 🔹 Get bugs by status (OPEN, IN_PROGRESS, RESOLVED)
+GET http://localhost:8080/api/bugs/status/OPEN
+Accept: application/json
+
+### 🔹 Get bugs by project ID (e.g., projectId=1)
+GET http://localhost:8080/api/bugs/project/1
+Accept: application/json
+
+### 🔹 Get bugs by assigned user (e.g., userId=1)
+GET http://localhost:8080/api/bugs/assigned/1
+Accept: application/json
+
+### 🔹 Create a new bug
+POST http://localhost:8080/api/bugs
+Content-Type: application/json
+
+{
+  "name": "Login button not working",
+  "status": "OPEN",
+  "description": "Login button fails to redirect",
+  "assignedTo": { "id": 1 },
+  "project": { "id": 1 }
+}
+
+### 🔹 Create another bug
+POST http://localhost:8080/api/bugs
+Content-Type: application/json
+
+{
+  "name": "UI misalignment",
+  "status": "RESOLVED",
+  "description": "Settings page UI issue",
+  "assignedTo": { "id": 2 },
+  "project": { "id": 2 }
+}
+
+### Get Bugs by ID
+GET http://localhost:8080/api/bugs/1
+Accept : application/json
+
+###
+PUT http://localhost:8080/api/bugs/2
+Content-Type: application/json
+
+{
+  "status": "Done"
+}
+
+###
+DELETE http://localhost:8080/api/bugs/2
